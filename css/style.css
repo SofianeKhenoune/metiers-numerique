@@ -1,0 +1,50 @@
+/* Styles principaux pour Les Métiers du Web */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+:root {
+  --font-family-display: Arial, sans-serif;
+  --font-weight-display: 600;
+  --font-family-content: Arial, sans-serif;
+  --font-weight-content: 400;
+  --font-size-content: 16px;
+  --line-height-content: 1.4;
+}
+
+body.theme-dark {
+  --color-bg-base: #0f172a;
+  --color-bg-elevated: #020617;
+  --color-bg-surface: #1e293b;
+  --color-bg-muted: #334155;
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  --color-text-accent: #38bdf8;
+  --color-primary: #38bdf8;
+  --color-primary-foreground: #0f172a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-content);
+  font-weight: var(--font-weight-content);
+  font-size: var(--font-size-content);
+  line-height: var(--line-height-content);
+  overflow-x: hidden;
+}
+
+.slide {
+  width: 960px;
+  height: 540px;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ... Autres styles à compléter ... */

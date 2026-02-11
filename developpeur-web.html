@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Développeur Web - Forum des Métiers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-slate-900 text-slate-100">
+    <header
+      class="sticky top-0 z-50 bg-slate-950 shadow-lg border-b border-slate-800"
+    >
+      <div class="max-w-6xl mx-auto flex items-center px-4 py-3">
+        <div class="text-2xl font-bold text-cyan-400 tracking-tight">
+          Forum des Métiers
+        </div>
+        <div class="flex-grow"></div>
+        <!-- Burger button for mobile -->
+        <button
+          id="menu-btn"
+          class="min-[1085px]:hidden text-cyan-400 focus:outline-none ml-auto"
+          aria-label="Ouvrir le menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <nav>
+          <ul
+            id="nav-menu"
+            class="absolute top-16 left-0 w-full bg-slate-950 border-b border-slate-800 flex-col gap-2 text-lg font-semibold hidden min-[1085px]:static min-[1085px]:flex min-[1085px]:flex-row min-[1085px]:gap-6 min-[1085px]:bg-transparent min-[1085px]:border-0 min-[1085px]:w-auto min-[1085px]:items-center"
+          >
+            <li>
+              <a
+                href="index.html#accueil"
+                class="block px-4 py-2 text-white hover:text-cyan-400 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Accueil</a
+              >
+            </li>
+            <li>
+              <a
+                href="developpeur-web.html"
+                class="block px-4 py-2 text-white hover:bg-cyan-400 hover:text-slate-900 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition bg-cyan-400 text-slate-900"
+                >Développeur Web</a
+              >
+            </li>
+            <li>
+              <a
+                href="assistant-numerique.html"
+                class="block px-4 py-2 text-white hover:bg-cyan-400 hover:text-slate-900 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Assistant Numérique</a
+              >
+            </li>
+            <li>
+              <a
+                href="formateur-digital.html"
+                class="block px-4 py-2 text-white hover:bg-cyan-400 hover:text-slate-900 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Formateur Digital</a
+              >
+            </li>
+            <li>
+              <a
+                href="quiz.html"
+                class="block px-4 py-2 text-white hover:text-cyan-400 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Quiz</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        function updateMenuDisplay() {
+          if (window.innerWidth >= 1085) {
+            navMenu.classList.remove('hidden');
+          } else {
+            navMenu.classList.add('hidden');
+          }
+        }
+        menuBtn.addEventListener('click', () => {
+          navMenu.classList.toggle('hidden');
+        });
+        window.addEventListener('resize', updateMenuDisplay);
+        // Initial state
+        updateMenuDisplay();
+      </script>
+    </header>
+    <main>
+      <section
+        class="min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800"
+      >
+        <div class="max-w-[1124px] w-full mx-auto px-4 py-16">
+          <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="flex flex-col items-center md:items-start">
+              <img
+                src="img/dev-illu.svg"
+                alt="Illustration développeur web"
+                class="mb-6 w-40 h-40 drop-shadow-lg animate-bounce-slow"
+              />
+              <h1
+                class="text-4xl md:text-5xl font-extrabold text-cyan-400 mb-4 text-center md:text-left"
+              >
+                Développeur Web
+              </h1>
+              <p class="text-xl text-slate-200 mb-6 text-center md:text-left">
+                Le développeur web crée des sites internet et des applications :
+                il écrit du code, imagine le design, rend les pages interactives
+                et s’assure que tout fonctionne sur ordinateur, tablette et
+                mobile.
+              </p>
+              <div
+                class="bg-cyan-900/30 border-l-4 border-cyan-400 rounded-lg p-4 mb-4 shadow"
+              >
+                <span class="font-semibold text-cyan-300"
+                  >Exemple concret :</span
+                >
+                J’ai créé un site pour une association sportive où les membres
+                peuvent s’inscrire en ligne et voir les résultats des matchs.
+              </div>
+              <div
+                class="bg-cyan-800/30 border-l-4 border-cyan-300 rounded-lg p-4 mb-6 shadow"
+              >
+                <span class="font-semibold text-cyan-300"
+                  >Conseil pour les collégiens :</span
+                >
+                Tu aimes les jeux vidéo ? Essaie de créer ton propre mini-jeu en
+                ligne ! Il existe plein de ressources gratuites pour débuter
+                (OpenClassrooms, Grafikart, MDN Web Docs…)
+              </div>
+              <a
+                href="index.html#metiers"
+                class="inline-block bg-cyan-400 text-slate-900 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-cyan-300 transition"
+                >Retour aux métiers</a
+              >
+            </div>
+            <div>
+              <div class="grid gap-6">
+                <div
+                  class="bg-slate-800/80 rounded-xl p-5 shadow border-l-4 border-cyan-400"
+                >
+                  <h2 class="text-2xl font-bold text-cyan-300 mb-2">
+                    Missions principales
+                  </h2>
+                  <ul
+                    class="list-disc list-inside text-cyan-100 text-base ml-4"
+                  >
+                    <li>Créer des sites vitrines, blogs, boutiques</li>
+                    <li>Développer des applications interactives</li>
+                    <li>Assurer la maintenance et la sécurité</li>
+                  </ul>
+                </div>
+                <div
+                  class="bg-slate-800/80 rounded-xl p-5 shadow border-l-4 border-cyan-400"
+                >
+                  <h2 class="text-2xl font-bold text-cyan-300 mb-2">
+                    Qualités utiles
+                  </h2>
+                  <ul
+                    class="list-disc list-inside text-cyan-100 text-base ml-4"
+                  >
+                    <li>Curiosité, logique, créativité</li>
+                    <li>Patience et persévérance</li>
+                    <li>Goût du travail en équipe</li>
+                  </ul>
+                </div>
+                <div
+                  class="bg-slate-800/80 rounded-xl p-5 shadow border-l-4 border-cyan-400"
+                >
+                  <h2 class="text-2xl font-bold text-cyan-300 mb-2">
+                    Outils & environnements
+                  </h2>
+                  <ul
+                    class="list-disc list-inside text-cyan-100 text-base ml-4"
+                  >
+                    <li>HTML, CSS, JavaScript, PHP…</li>
+                    <li>Frameworks (React, Symfony…)</li>
+                    <li>Logiciels de design (Figma…)</li>
+                  </ul>
+                </div>
+                <div
+                  class="bg-slate-800/80 rounded-xl p-5 shadow border-l-4 border-cyan-400"
+                >
+                  <h2 class="text-2xl font-bold text-cyan-300 mb-2">
+                    Journée type
+                  </h2>
+                  <ul
+                    class="list-disc list-inside text-cyan-100 text-base ml-4"
+                  >
+                    <li>Analyser les besoins d’un projet</li>
+                    <li>Écrire et tester du code</li>
+                    <li>Corriger des bugs, améliorer le site</li>
+                    <li>Collaborer avec d’autres développeurs</li>
+                  </ul>
+                </div>
+                <div
+                  class="bg-slate-800/80 rounded-xl p-5 shadow border-l-4 border-cyan-400"
+                >
+                  <h2 class="text-2xl font-bold text-cyan-300 mb-2">
+                    Débouchés
+                  </h2>
+                  <ul
+                    class="list-disc list-inside text-cyan-100 text-base ml-4"
+                  >
+                    <li>Entreprises, agences web, freelance</li>
+                    <li>Développeur front-end, back-end, fullstack</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-slate-950 py-6 mt-12">
+      <div
+        class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4"
+      >
+        <p class="text-slate-400 text-center">
+          Sofiane Khenoune &copy; 2026 - Forum des Métiers – Collège Saint
+          Joseph, Aubervilliers
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

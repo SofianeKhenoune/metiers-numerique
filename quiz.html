@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz - Forum des Métiers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-slate-900 text-slate-100">
+    <header
+      class="sticky top-0 z-50 bg-slate-950 shadow-lg border-b border-slate-800"
+    >
+      <div class="max-w-6xl mx-auto flex items-center px-4 py-3">
+        <div class="text-2xl font-bold text-cyan-400 tracking-tight">
+          Forum des Métiers
+        </div>
+        <div class="flex-grow"></div>
+        <button
+          id="menu-btn"
+          class="min-[1085px]:hidden text-cyan-400 focus:outline-none ml-auto"
+          aria-label="Ouvrir le menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <nav>
+          <ul
+            id="nav-menu"
+            class="absolute top-16 left-0 w-full bg-slate-950 border-b border-slate-800 flex-col gap-2 text-lg font-semibold hidden min-[1085px]:static min-[1085px]:flex min-[1085px]:flex-row min-[1085px]:gap-6 min-[1085px]:bg-transparent min-[1085px]:border-0 min-[1085px]:w-auto min-[1085px]:items-center"
+          >
+            <li>
+              <a
+                href="index.html#accueil"
+                class="block px-4 py-2 text-white hover:text-cyan-400 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Accueil</a
+              >
+            </li>
+            <li>
+              <a
+                href="developpeur-web.html"
+                class="block px-4 py-2 text-white hover:bg-cyan-400 hover:text-slate-900 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Développeur Web</a
+              >
+            </li>
+            <li>
+              <a
+                href="assistant-numerique.html"
+                class="block px-4 py-2 text-white hover:bg-cyan-400 hover:text-slate-900 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Assistant Numérique</a
+              >
+            </li>
+            <li>
+              <a
+                href="formateur-digital.html"
+                class="block px-4 py-2 text-white hover:bg-cyan-400 hover:text-slate-900 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Formateur Digital</a
+              >
+            </li>
+            <li>
+              <a
+                href="quiz.html"
+                class="block px-4 py-2 bg-cyan-400 text-slate-900 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Quiz</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        function updateMenuDisplay() {
+          if (window.innerWidth >= 1085) {
+            navMenu.classList.remove('hidden');
+          } else {
+            navMenu.classList.add('hidden');
+          }
+        }
+        menuBtn.addEventListener('click', () => {
+          navMenu.classList.toggle('hidden');
+        });
+        window.addEventListener('resize', updateMenuDisplay);
+        updateMenuDisplay();
+      </script>
+    </header>
+    <main>
+      <section
+        class="min-h-[70vh] flex items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800"
+      >
+        <div class="max-w-[1124px] w-full mx-auto px-4 py-16">
+          <div
+            class="bg-slate-900 rounded-2xl shadow-2xl p-8 flex flex-col items-center"
+          >
+            <h1
+              class="text-4xl md:text-5xl font-extrabold text-cyan-400 mb-8 text-center"
+            >
+              Quiz : Les Métiers du Web
+            </h1>
+            <form id="quiz-web" class="space-y-8 w-full max-w-2xl">
+              <!-- Questions (10) -->
+              <div
+                class="quiz-question rounded-xl p-4 transition"
+                data-question="1"
+              >
+                <p class="text-lg mb-2 font-semibold text-slate-100">
+                  1. Quel langage sert à créer la structure d'une page web ?
+                </p>
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q1"
+                    value="HTML"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">HTML</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q1"
+                    value="CSS"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">CSS</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q1"
+                    value="JavaScript"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">JavaScript</span></label
+                >
+              </div>
+              <div
+                class="quiz-question rounded-xl p-4 transition"
+                data-question="2"
+              >
+                <p class="text-lg mb-2 font-semibold text-slate-100">
+                  2. À quoi sert un développeur web ?
+                </p>
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q2"
+                    value="Créer des sites"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle"
+                    >Créer des sites internet</span
+                  ></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q2"
+                    value="Réparer des voitures"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Réparer des voitures</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q2"
+                    value="Cuisiner"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Cuisiner</span></label
+                >
+              </div>
+              <div
+                class="quiz-question rounded-xl p-4 transition"
+                data-question="3"
+              >
+                <p class="text-lg mb-2 font-semibold text-slate-100">
+                  3. Quelle qualité est importante pour former des débutants ?
+                </p>
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q3"
+                    value="Patience"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Patience</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q3"
+                    value="Vitesse"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Vitesse</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q3"
+                    value="Force"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Force</span></label
+                >
+              </div>
+              <div
+                class="quiz-question rounded-xl p-4 transition"
+                data-question="4"
+              >
+                <p class="text-lg mb-2 font-semibold text-slate-100">
+                  4. Quel outil permet de styliser une page web ?
+                </p>
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q4"
+                    value="CSS"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">CSS</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q4"
+                    value="HTML"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">HTML</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q4"
+                    value="PHP"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">PHP</span></label
+                >
+              </div>
+              <div
+                class="quiz-question rounded-xl p-4 transition"
+                data-question="5"
+              >
+                <p class="text-lg mb-2 font-semibold text-slate-100">
+                  5. Quel métier aide à installer et dépanner des ordinateurs ?
+                </p>
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q5"
+                    value="Assistant numérique"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Assistant numérique</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q5"
+                    value="Développeur web"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Développeur web</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q5"
+                    value="Formateur digital"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Formateur digital</span></label
+                >
+              </div>
+              <div
+                class="quiz-question rounded-xl p-4 transition"
+                data-question="6"
+              >
+                <p class="text-lg mb-2 font-semibold text-slate-100">
+                  6. Quel outil est utilisé pour faire des présentations ?
+                </p>
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q6"
+                    value="PowerPoint"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">PowerPoint</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q6"
+                    value="Photoshop"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Photoshop</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q6"
+                    value="Excel"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Excel</span></label
+                >
+              </div>
+              <div
+                class="quiz-question rounded-xl p-4 transition"
+                data-question="7"
+              >
+                <p class="text-lg mb-2 font-semibold text-slate-100">
+                  7. Quel langage permet de rendre une page web interactive ?
+                </p>
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q7"
+                    value="JavaScript"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">JavaScript</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q7"
+                    value="HTML"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">HTML</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q7"
+                    value="Word"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Word</span></label
+                >
+              </div>
+              <div
+                class="quiz-question rounded-xl p-4 transition"
+                data-question="8"
+              >
+                <p class="text-lg mb-2 font-semibold text-slate-100">
+                  8. Qui accompagne les gens pour apprendre à utiliser Internet
+                  ?
+                </p>
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q8"
+                    value="Formateur digital"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Formateur digital</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q8"
+                    value="Développeur web"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Développeur web</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q8"
+                    value="Designer"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Designer</span></label
+                >
+              </div>
+              <div
+                class="quiz-question rounded-xl p-4 transition"
+                data-question="9"
+              >
+                <p class="text-lg mb-2 font-semibold text-slate-100">
+                  9. Quel outil permet de protéger un ordinateur contre les
+                  virus ?
+                </p>
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q9"
+                    value="Antivirus"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Antivirus</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q9"
+                    value="Navigateur"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Navigateur</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q9"
+                    value="Tableur"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Tableur</span></label
+                >
+              </div>
+              <div
+                class="quiz-question rounded-xl p-4 transition"
+                data-question="10"
+              >
+                <p class="text-lg mb-2 font-semibold text-slate-100">
+                  10. Quel est le principal avantage du travail en équipe dans
+                  le numérique ?
+                </p>
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q10"
+                    value="Partager les idées"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Partager les idées</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q10"
+                    value="Aller plus lentement"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Aller plus lentement</span></label
+                >
+                <label class="block cursor-pointer text-slate-100"
+                  ><input
+                    type="radio"
+                    name="q10"
+                    value="Être seul"
+                    class="mr-2 align-middle"
+                  />
+                  <span class="align-middle">Être seul</span></label
+                >
+              </div>
+              <button
+                type="button"
+                onclick="corrigerQuiz()"
+                class="w-full bg-cyan-400 text-slate-900 font-semibold px-8 py-3 rounded-full shadow hover:bg-cyan-300 transition"
+              >
+                Valider mes réponses
+              </button>
+            </form>
+            <div
+              id="quiz-resultat"
+              class="text-xl mt-6 w-full text-center"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-slate-950 py-6 border-t border-slate-800">
+      <div
+        class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4"
+      >
+        <p class="text-slate-400 text-center">
+          Sofiane Khenoune &copy; 2026 - Forum des Métiers – Collège Saint
+          Joseph, Aubervilliers
+        </p>
+      </div>
+    </footer>
+    <script src="js/quiz.js"></script>
+  </body>
+</html>
