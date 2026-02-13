@@ -14,9 +14,15 @@
         transform: translateY(40px);
         animation: fadeInUp 1s forwards;
       }
-      .fade-in.delay-1 { animation-delay: 0.2s; }
-      .fade-in.delay-2 { animation-delay: 0.4s; }
-      .fade-in.delay-3 { animation-delay: 0.6s; }
+      .fade-in.delay-1 {
+        animation-delay: 0.2s;
+      }
+      .fade-in.delay-2 {
+        animation-delay: 0.4s;
+      }
+      .fade-in.delay-3 {
+        animation-delay: 0.6s;
+      }
       @keyframes fadeInUp {
         to {
           opacity: 1;
@@ -27,190 +33,433 @@
         animation: bounce 1.5s infinite;
       }
       @keyframes bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-16px); }
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-16px);
+        }
       }
     </style>
   </head>
-  <body class="theme-dark">
-    <body class="bg-slate-900 text-slate-100">
-      <!-- Header / Navigation -->
-      <header class="sticky top-0 z-50 bg-slate-950 shadow-lg border-b border-slate-800">
-        <div class="max-w-6xl mx-auto flex items-center px-4 py-3">
-          <div class="text-2xl font-bold text-cyan-400 tracking-tight">Forum des Métiers</div>
-          <div class="flex-grow"></div>
-          <!-- Burger button for mobile -->
-          <button id="menu-btn" class="min-[1085px]:hidden text-cyan-400 focus:outline-none ml-auto" aria-label="Ouvrir le menu">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-          <nav>
-            <ul id="nav-menu" class="absolute top-16 left-0 w-full bg-slate-950 border-b border-slate-800 flex-col gap-2 text-lg font-semibold hidden min-[1085px]:static min-[1085px]:flex min-[1085px]:flex-row min-[1085px]:gap-6 min-[1085px]:bg-transparent min-[1085px]:border-0 min-[1085px]:w-auto min-[1085px]:items-center">
-              <li><a href="#accueil" class="block px-4 py-2 text-white hover:text-cyan-400 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition">Accueil</a></li>
-              <li><a href="developpeur-web.html" class="block px-4 py-2 text-white hover:bg-cyan-400 hover:text-slate-900 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition">Développeur Web</a></li>
-              <li><a href="assistant-numerique.html" class="block px-4 py-2 text-white hover:bg-cyan-400 hover:text-slate-900 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition">Assistant Numérique</a></li>
-              <li><a href="formateur-digital.html" class="block px-4 py-2 text-white hover:bg-cyan-400 hover:text-slate-900 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition">Formateur Digital</a></li>
-              <li><a href="quiz.html" class="block px-4 py-2 text-white hover:text-cyan-400 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition">Quiz</a></li>
-            </ul>
-          </nav>
+
+  <body class="bg-slate-900 text-slate-100">
+    <!-- Header / Navigation -->
+    <header
+      class="sticky top-0 z-50 bg-slate-950 shadow-lg border-b border-slate-800"
+    >
+      <div class="max-w-6xl mx-auto flex items-center px-4 py-3">
+        <div class="text-2xl font-bold text-cyan-400 tracking-tight">
+          Forum des Métiers
         </div>
-        <script>
-          // Mobile menu toggle
-          const menuBtn = document.getElementById('menu-btn');
-          const navMenu = document.getElementById('nav-menu');
-          function updateMenuDisplay() {
-            if(window.innerWidth >= 1085) {
-              navMenu.classList.remove('hidden');
-            } else {
-              navMenu.classList.add('hidden');
-            }
+        <div class="flex-grow"></div>
+        <!-- Burger button for mobile -->
+        <button
+          id="menu-btn"
+          class="min-[1085px]:hidden text-cyan-400 focus:outline-none ml-auto"
+          aria-label="Ouvrir le menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <nav>
+          <ul
+            id="nav-menu"
+            class="absolute top-16 left-0 w-full bg-slate-950 border-b border-slate-800 flex-col gap-2 text-lg font-semibold hidden min-[1085px]:static min-[1085px]:flex min-[1085px]:flex-row min-[1085px]:gap-6 min-[1085px]:bg-transparent min-[1085px]:border-0 min-[1085px]:w-auto min-[1085px]:items-center"
+          >
+            <li>
+              <a
+                href="#accueil"
+                class="block px-4 py-2 text-white hover:text-cyan-400 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Accueil</a
+              >
+            </li>
+            <li>
+              <a
+                href="developpeur-web.html"
+                class="block px-4 py-2 text-white hover:bg-cyan-400 hover:text-slate-900 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Développeur Web</a
+              >
+            </li>
+            <li>
+              <a
+                href="assistant-numerique.html"
+                class="block px-4 py-2 text-white hover:bg-cyan-400 hover:text-slate-900 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Assistant Numérique</a
+              >
+            </li>
+            <li>
+              <a
+                href="formateur-digital.html"
+                class="block px-4 py-2 text-white hover:bg-cyan-400 hover:text-slate-900 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Formateur Digital</a
+              >
+            </li>
+            <li>
+              <a
+                href="quiz.html"
+                class="block px-4 py-2 text-white hover:text-cyan-400 min-[1085px]:px-3 min-[1085px]:py-1 rounded transition"
+                >Quiz</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        function updateMenuDisplay() {
+          if (window.innerWidth >= 1085) {
+            navMenu.classList.remove('hidden');
+          } else {
+            navMenu.classList.add('hidden');
           }
-          menuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('hidden');
-          });
-          window.addEventListener('resize', updateMenuDisplay);
-          // Initial state
-          updateMenuDisplay();
-        </script>
-      </header>
+        }
+        menuBtn.addEventListener('click', () => {
+          navMenu.classList.toggle('hidden');
+        });
+        window.addEventListener('resize', updateMenuDisplay);
+        // Initial state
+        updateMenuDisplay();
+      </script>
+    </header>
 
-      <main>
-        <!-- Hero Section adaptée Forum des Métiers -->
-        <section id="accueil" class="min-h-screen flex items-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
-          <div class="max-w-3xl mx-auto flex flex-col items-center gap-8 px-4 py-16 text-center">
-            <img src="img/profil.png" alt="Photo de profil" class="w-32 h-32 object-cover rounded-full border-4 border-cyan-400 shadow-xl bg-slate-800 mb-4" />
-            <h1 class="text-4xl md:text-5xl font-extrabold text-cyan-400 mb-2">Découvre 3 métiers du numérique</h1>
-            <p class="text-xl text-slate-200 max-w-2xl mb-2">Bienvenue au forum des métiers du Collège Saint Joseph à Aubervilliers.<br> Ici, pas de pub, juste l’essentiel pour comprendre 3 métiers passionnants !</p>
-          </div>
-        </section>
-
-        <!-- Présentation des 3 métiers -->
-        <section id="metiers" class="py-20 bg-slate-900">
-          <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-12 text-center">3 métiers du numérique à découvrir</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-              <!-- Développeur Web -->
-              <a href="developpeur-web.html" class="bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col items-start transition-transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
-                <img src="img/dev-illu.svg" alt="Illustration développeur web" class="mb-4 w-24 h-24 drop-shadow-lg bounce mx-auto" />
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2 w-full text-center">Développeur Web</h3>
-                <p class="text-slate-200 mb-2 text-center">Créer des sites internet et des applications : du code, du design, de l’interactivité ! (HTML, CSS, JavaScript, PHP…)</p>
-                <ul class="text-cyan-200 text-sm mt-2 space-y-1">
-                  <li>• Sites vitrines, blogs, boutiques</li>
-                  <li>• Applications interactives (ex : quiz, jeux, réseaux sociaux)</li>
-                  <li>• Maintenance et évolutions</li>
-                </ul>
-                <div class="mt-4 text-slate-400 text-sm text-center">Exemple : J’ai créé un site pour une association sportive où les membres peuvent s’inscrire en ligne et voir les résultats des matchs.</div>
-              </a>
-              <!-- Assistant Numérique -->
-              <a href="assistant-numerique.html" class="bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col items-start transition-transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
-                <img src="img/assistant-illu.svg" alt="Illustration assistant numérique" class="mb-4 w-24 h-24 drop-shadow-lg bounce mx-auto" />
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2 w-full text-center">Assistant Numérique</h3>
-                <p class="text-slate-200 mb-2 text-center">Aider à utiliser l’informatique : installation, dépannage, sécurité, conseils, gestion de documents, outils collaboratifs…</p>
-                <ul class="text-cyan-200 text-sm mt-2 space-y-1">
-                  <li>• Support technique (ex : réparer un ordinateur qui ne démarre plus)</li>
-                  <li>• Sécurisation des données (sauvegarder les photos de famille, protéger contre les virus)</li>
-                  <li>• Aide à la prise en main (ex : apprendre à utiliser Word ou envoyer un mail)</li>
-                </ul>
-                <div class="mt-4 text-slate-400 text-sm text-center">Anecdote : J’ai aidé une grand-mère à retrouver ses photos perdues et à passer son premier appel vidéo avec ses petits-enfants !</div>
-              </a>
-              <!-- Formateur Digital -->
-              <a href="formateur-digital.html" class="bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col items-start transition-transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
-                <img src="img/formateur-illu.svg" alt="Illustration formateur digital" class="mb-4 w-24 h-24 drop-shadow-lg bounce mx-auto" />
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2 w-full text-center">Formateur Digital</h3>
-                <p class="text-slate-200 mb-2 text-center">Transmettre les connaissances du web et du numérique à tous : ateliers, formations, accompagnement, vulgarisation…</p>
-                <ul class="text-cyan-200 text-sm mt-2 space-y-1">
-                  <li>• Ateliers d’initiation (ex : créer sa première page web)</li>
-                  <li>• Formation sur les outils web (ex : comment fonctionne un moteur de recherche)</li>
-                  <li>• Sensibilisation à la sécurité (ex : reconnaître un mail frauduleux)</li>
-                </ul>
-                <div class="mt-4 text-slate-400 text-sm text-center">Exemple : J’ai animé un atelier où des collégiens ont créé leur propre mini-site en HTML !</div>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Compétences -->
-        <section id="competences" class="py-20 bg-gradient-to-br from-slate-800 to-slate-900">
-          <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-8">Compétences</h2>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg text-slate-200">
-              <li><span class="font-semibold text-cyan-300">JavaScript</span> (React, Next.js)</li>
-              <li><span class="font-semibold text-cyan-300">HTML5, CSS3, SCSS</span></li>
-              <li><span class="font-semibold text-cyan-300">PHP, SQL/MySQL, Symfony</span></li>
-              <li><span class="font-semibold text-cyan-300">TypeScript</span> (en cours d'apprentissage)</li>
-              <li><span class="font-semibold text-cyan-300">Linux, Git, Figma</span></li>
-              <li><span class="font-semibold text-cyan-300">Cybersécurité</span> (initiation)</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Projets -->
-        <section id="projets" class="py-20 bg-slate-900">
-          <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-8">Projets</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <a href="https://www.webflexsolutions.fr/" target="_blank" rel="noopener" class="bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col items-start transition-transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Webflex Solutions</h3>
-                <p class="text-slate-200 mb-2">Site professionnel de mon entreprise de création web, solutions digitales et accompagnement numérique.</p>
-                <span class="text-cyan-400 text-sm">www.webflexsolutions.fr</span>
-              </a>
-              <a href="https://www.aubervilliers-mosquees.fr/" target="_blank" rel="noopener" class="bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col items-start transition-transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Aubervilliers Mosquées</h3>
-                <p class="text-slate-200 mb-2">Site d’association pour le projet de construction d’un lieu de culte à Aubervilliers.</p>
-                <span class="text-cyan-400 text-sm">www.aubervilliers-mosquees.fr</span>
-              </a>
-              <a href="https://www.sofiane-khenoune.fr/" target="_blank" rel="noopener" class="bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col items-start transition-transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Portfolio personnel</h3>
-                <p class="text-slate-200 mb-2">Mon portfolio en ligne : réalisations, compétences, parcours et contact.</p>
-                <span class="text-cyan-400 text-sm">www.sofiane-khenoune.fr</span>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Services -->
-        <section id="services" class="py-20 bg-gradient-to-br from-slate-800 to-slate-900">
-          <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-8">Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div class="bg-slate-800 rounded-xl shadow-lg p-6">
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Assistance numérique</h3>
-                <p class="text-slate-200">Support technique, maintenance, sécurité et gestion des outils numériques.</p>
-              </div>
-              <div class="bg-slate-800 rounded-xl shadow-lg p-6">
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Assistance administrative</h3>
-                <p class="text-slate-200">Externalisation des tâches administratives, gestion documentaire, automatisation.</p>
-              </div>
-              <div class="bg-slate-800 rounded-xl shadow-lg p-6">
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Formation & conseil</h3>
-                <p class="text-slate-200">Formations numériques, accompagnement au changement, conseil stratégique.</p>
-              </div>
-              <div class="bg-slate-800 rounded-xl shadow-lg p-6">
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Création de site vitrine</h3>
-                <p class="text-slate-200">Sites modernes, accessibles, optimisés SEO et responsive.</p>
-              </div>
-              <div class="bg-slate-800 rounded-xl shadow-lg p-6">
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Site e-commerce</h3>
-                <p class="text-slate-200">Boutiques en ligne performantes, configuration paiement, parcours client optimisé.</p>
-              </div>
-              <div class="bg-slate-800 rounded-xl shadow-lg p-6">
-                <h3 class="text-xl font-semibold text-cyan-300 mb-2">Refonte de site</h3>
-                <p class="text-slate-200">Audit, ergonomie, compatibilité mobile, mise à jour technique.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-      </main>
-
-      <!-- Footer -->
-      <footer class="bg-slate-950 py-6 border-t border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4">
-          <p class="text-slate-400 text-center">Sofiane Khenoune &copy; 2026 - Forum des Métiers – Collège Saint Joseph, Aubervilliers</p>
+    <main>
+      <!-- Hero Section adaptée Forum des Métiers -->
+      <section
+        id="accueil"
+        class="min-h-screen flex items-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800"
+      >
+        <div
+          class="max-w-3xl mx-auto flex flex-col items-center gap-8 px-4 py-16 text-center"
+        >
+          <img
+            src="img/profil.png"
+            alt="Photo de profil"
+            class="w-32 h-32 object-cover rounded-full border-4 border-cyan-400 shadow-xl bg-slate-800 mb-4"
+          />
+          <h1 class="text-4xl md:text-5xl font-extrabold text-cyan-400 mb-2">
+            Découvre 3 métiers du numérique
+          </h1>
+          <p class="text-xl text-slate-200 max-w-2xl mb-2">
+            Bienvenue au forum des métiers du Collège Saint Joseph à
+            Aubervilliers.<br />
+            Ici, pas de pub, juste l’essentiel pour comprendre 3 métiers
+            passionnants !
+          </p>
         </div>
-      </footer>
+      </section>
+
+      <!-- Présentation des 3 métiers -->
+      <section id="metiers" class="py-20 bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4">
+          <h2
+            class="text-3xl md:text-4xl font-bold text-cyan-400 mb-12 text-center"
+          >
+            3 métiers du numérique à découvrir
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Développeur Web -->
+            <a
+              href="developpeur-web.html"
+              class="bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col items-start transition-transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            >
+              <img
+                src="img/dev-illu.svg"
+                alt="Illustration développeur web"
+                class="mb-4 w-24 h-24 drop-shadow-lg bounce mx-auto"
+              />
+              <h3
+                class="text-xl font-semibold text-cyan-300 mb-2 w-full text-center"
+              >
+                Développeur Web
+              </h3>
+              <p class="text-slate-200 mb-2 text-center">
+                Créer des sites internet et des applications : du code, du
+                design, de l’interactivité ! (HTML, CSS, JavaScript, PHP…)
+              </p>
+              <ul class="text-cyan-200 text-sm mt-2 space-y-1">
+                <li>• Sites vitrines, blogs, boutiques</li>
+                <li>
+                  • Applications interactives (ex : quiz, jeux, réseaux sociaux)
+                </li>
+                <li>• Maintenance et évolutions</li>
+              </ul>
+              <div class="mt-4 text-slate-400 text-sm text-center">
+                Exemple : J’ai créé un site pour une association sportive où les
+                membres peuvent s’inscrire en ligne et voir les résultats des
+                matchs.
+              </div>
+            </a>
+            <!-- Assistant Numérique -->
+            <a
+              href="assistant-numerique.html"
+              class="bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col items-start transition-transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            >
+              <img
+                src="img/assistant-illu.svg"
+                alt="Illustration assistant numérique"
+                class="mb-4 w-24 h-24 drop-shadow-lg bounce mx-auto"
+              />
+              <h3
+                class="text-xl font-semibold text-cyan-300 mb-2 w-full text-center"
+              >
+                Assistant Numérique
+              </h3>
+              <p class="text-slate-200 mb-2 text-center">
+                Aider à utiliser l’informatique : installation, dépannage,
+                sécurité, conseils, gestion de documents, outils collaboratifs…
+              </p>
+              <ul class="text-cyan-200 text-sm mt-2 space-y-1">
+                <li>
+                  • Support technique (ex : réparer un ordinateur qui ne démarre
+                  plus)
+                </li>
+                <li>
+                  • Sécurisation des données (sauvegarder les photos de famille,
+                  protéger contre les virus)
+                </li>
+                <li>
+                  • Aide à la prise en main (ex : apprendre à utiliser Word ou
+                  envoyer un mail)
+                </li>
+              </ul>
+              <div class="mt-4 text-slate-400 text-sm text-center">
+                Anecdote : J’ai aidé une grand-mère à retrouver ses photos
+                perdues et à passer son premier appel vidéo avec ses
+                petits-enfants !
+              </div>
+            </a>
+            <!-- Formateur Digital -->
+            <a
+              href="formateur-digital.html"
+              class="bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col items-start transition-transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            >
+              <img
+                src="img/formateur-illu.svg"
+                alt="Illustration formateur digital"
+                class="mb-4 w-24 h-24 drop-shadow-lg bounce mx-auto"
+              />
+              <h3
+                class="text-xl font-semibold text-cyan-300 mb-2 w-full text-center"
+              >
+                Formateur Digital
+              </h3>
+              <p class="text-slate-200 mb-2 text-center">
+                Transmettre les connaissances du web et du numérique à tous :
+                ateliers, formations, accompagnement, vulgarisation…
+              </p>
+              <ul class="text-cyan-200 text-sm mt-2 space-y-1">
+                <li>
+                  • Ateliers d’initiation (ex : créer sa première page web)
+                </li>
+                <li>
+                  • Formation sur les outils web (ex : comment fonctionne un
+                  moteur de recherche)
+                </li>
+                <li>
+                  • Sensibilisation à la sécurité (ex : reconnaître un mail
+                  frauduleux)
+                </li>
+              </ul>
+              <div class="mt-4 text-slate-400 text-sm text-center">
+                Exemple : J’ai animé un atelier où des collégiens ont créé leur
+                propre mini-site en HTML !
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Compétences -->
+      <section
+        id="competences"
+        class="py-20 bg-gradient-to-br from-slate-800 to-slate-900"
+      >
+        <div class="max-w-4xl mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-8">
+            Compétences
+          </h2>
+          <ul
+            class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg text-slate-200"
+          >
+            <li>
+              <span class="font-semibold text-cyan-300">JavaScript</span>
+              (React, Next.js)
+            </li>
+            <li>
+              <span class="font-semibold text-cyan-300">HTML5, CSS3, SCSS</span>
+            </li>
+            <li>
+              <span class="font-semibold text-cyan-300"
+                >PHP, SQL/MySQL, Symfony</span
+              >
+            </li>
+            <li>
+              <span class="font-semibold text-cyan-300">TypeScript</span> (en
+              cours d'apprentissage)
+            </li>
+            <li>
+              <span class="font-semibold text-cyan-300">Linux, Git, Figma</span>
+            </li>
+            <li>
+              <span class="font-semibold text-cyan-300">Cybersécurité</span>
+              (initiation)
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projets -->
+      <section id="projets" class="py-20 bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-8">
+            Projets
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <a
+              href="https://www.webflexsolutions.fr/"
+              target="_blank"
+              rel="noopener"
+              class="bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col items-start transition-transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            >
+              <h3 class="text-xl font-semibold text-cyan-300 mb-2">
+                Webflex Solutions
+              </h3>
+              <p class="text-slate-200 mb-2">
+                Site professionnel de mon entreprise de création web, solutions
+                digitales et accompagnement numérique.
+              </p>
+              <span class="text-cyan-400 text-sm">www.webflexsolutions.fr</span>
+            </a>
+            <a
+              href="https://www.aubervilliers-mosquees.fr/"
+              target="_blank"
+              rel="noopener"
+              class="bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col items-start transition-transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            >
+              <h3 class="text-xl font-semibold text-cyan-300 mb-2">
+                Aubervilliers Mosquées
+              </h3>
+              <p class="text-slate-200 mb-2">
+                Site d’association pour le projet de construction d’un lieu de
+                culte à Aubervilliers.
+              </p>
+              <span class="text-cyan-400 text-sm"
+                >www.aubervilliers-mosquees.fr</span
+              >
+            </a>
+            <a
+              href="https://www.sofiane-khenoune.fr/"
+              target="_blank"
+              rel="noopener"
+              class="bg-slate-800 rounded-xl shadow-lg p-6 flex flex-col items-start transition-transform hover:scale-105 hover:shadow-2xl hover:ring-2 hover:ring-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            >
+              <h3 class="text-xl font-semibold text-cyan-300 mb-2">
+                Portfolio personnel
+              </h3>
+              <p class="text-slate-200 mb-2">
+                Mon portfolio en ligne : réalisations, compétences, parcours et
+                contact.
+              </p>
+              <span class="text-cyan-400 text-sm">www.sofiane-khenoune.fr</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section
+        id="services"
+        class="py-20 bg-gradient-to-br from-slate-800 to-slate-900"
+      >
+        <div class="max-w-6xl mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-8">
+            Services
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-slate-800 rounded-xl shadow-lg p-6">
+              <h3 class="text-xl font-semibold text-cyan-300 mb-2">
+                Assistance numérique
+              </h3>
+              <p class="text-slate-200">
+                Support technique, maintenance, sécurité et gestion des outils
+                numériques.
+              </p>
+            </div>
+            <div class="bg-slate-800 rounded-xl shadow-lg p-6">
+              <h3 class="text-xl font-semibold text-cyan-300 mb-2">
+                Assistance administrative
+              </h3>
+              <p class="text-slate-200">
+                Externalisation des tâches administratives, gestion
+                documentaire, automatisation.
+              </p>
+            </div>
+            <div class="bg-slate-800 rounded-xl shadow-lg p-6">
+              <h3 class="text-xl font-semibold text-cyan-300 mb-2">
+                Formation & conseil
+              </h3>
+              <p class="text-slate-200">
+                Formations numériques, accompagnement au changement, conseil
+                stratégique.
+              </p>
+            </div>
+            <div class="bg-slate-800 rounded-xl shadow-lg p-6">
+              <h3 class="text-xl font-semibold text-cyan-300 mb-2">
+                Création de site vitrine
+              </h3>
+              <p class="text-slate-200">
+                Sites modernes, accessibles, optimisés SEO et responsive.
+              </p>
+            </div>
+            <div class="bg-slate-800 rounded-xl shadow-lg p-6">
+              <h3 class="text-xl font-semibold text-cyan-300 mb-2">
+                Site e-commerce
+              </h3>
+              <p class="text-slate-200">
+                Boutiques en ligne performantes, configuration paiement,
+                parcours client optimisé.
+              </p>
+            </div>
+            <div class="bg-slate-800 rounded-xl shadow-lg p-6">
+              <h3 class="text-xl font-semibold text-cyan-300 mb-2">
+                Refonte de site
+              </h3>
+              <p class="text-slate-200">
+                Audit, ergonomie, compatibilité mobile, mise à jour technique.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-6 border-t border-slate-800">
+      <div
+        class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4"
+      >
+        <p class="text-slate-400 text-center">
+          Sofiane Khenoune &copy; 2026 - Forum des Métiers – Collège Saint
+          Joseph, Aubervilliers
+        </p>
+      </div>
+    </footer>
 
     <script src="js/quiz.js"></script>
   </body>
